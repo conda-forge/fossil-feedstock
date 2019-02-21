@@ -22,12 +22,12 @@ requirements:
     - perl  # [win]
   host:
     - openssl
-    - sqlite
+    - sqlite  # [unix]
     - tk
     - zlib
   run:
     - openssl
-    - sqlite
+    - sqlite  # [unix]
     - tk
     - zlib
 
@@ -45,7 +45,7 @@ about:
     management system with these advanced features:
 
   doc_url: https://fossil-scm.org/index.html/doc/trunk/www/permutedindex.html
-  dev_url: https://github.com/simplejson/simplejson
+  dev_url: https://fossil-scm.org/index.html/dir?ci=tip
 
 extra:
   recipe-maintainers:
