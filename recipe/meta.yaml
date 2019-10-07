@@ -19,9 +19,11 @@ requirements:
     - ccache  # [unix]
     - cmake  # [win]
     - make  # [unix]
+    - msinttypes  # [win and vc<14]
     - perl  # [win]
     - python 3.6  # [win]
   host:
+    - msinttypes  # [win and vc<14]
     - openssl
     - sqlite  # [unix]
     - tk
