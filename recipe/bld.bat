@@ -16,6 +16,7 @@ nmake /f Makefile.msc ^
   FOSSIL_ENABLE_JSON=1 ^
   FOSSIL_ENABLE_TCL=1 ^
   FOSSIL_BUILD_ZLIB=0 ^
+  USE_SYSTEM_SQLITE=1 ^
   PERLDIR=%PREFIX%\Library\bin
 if errorlevel 1 exit 1
 
