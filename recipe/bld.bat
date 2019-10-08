@@ -2,6 +2,8 @@
 
 :: Finds stdint.h from msinttypes.
 set INCLUDE=%LIBRARY_INC%;%INCLUDE%
+set LIB=%LIBRARY_LIB%;%LIB%
+set LIBPATH=%LIBRARY_LIB%;%LIBPATH%
 
 cd win
 
