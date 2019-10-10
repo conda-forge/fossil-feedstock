@@ -7,7 +7,7 @@ channel_targets:
 openssl:
 - 1.1.1a
 perl:
-- '5.26'
+- 5.26.2
 pin_run_as_build:
   openssl:
     max_pin: x.x.x
@@ -15,9 +15,16 @@ pin_run_as_build:
     max_pin: x.x.x
   tk:
     max_pin: x.x
+  vc:
+    max_pin: x
   zlib:
     max_pin: x.x
 tk:
 - '8.6'
+vc:
+- '14'
+zip_keys:
+- - vc
+  - c_compiler
 zlib:
 - '1.2'
