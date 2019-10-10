@@ -1,6 +1,5 @@
 {% set name = "fossil" %}
 {% set version = "2.10" %}
-{% set am_version = "1.15" %} # keep synchronized with build.sh
 
 package:
   name: {{ name }}
@@ -12,6 +11,7 @@ source:
 
 build:
   number: 0
+  skip: true  # [win and vc<14]
 
 requirements:
   build:
@@ -19,18 +19,15 @@ requirements:
     - ccache  # [unix]
     - cmake  # [win]
     - make  # [unix]
-    - msinttypes  # [win]
     - perl  # [win]
-    - python 3.6  # [win]
   host:
-    - msinttypes  # [win]
     - openssl
-    - sqlite
+    - sqlite  # [unix]
     - tk
     - zlib
   run:
     - openssl
-    - sqlite
+    - sqlite  # [unix]
     - tk
     - zlib
 
