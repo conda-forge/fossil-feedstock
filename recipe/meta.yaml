@@ -22,12 +22,12 @@ requirements:
     - perl  # [win]
   host:
     - openssl
-    - sqlite  # [unix]
+    - sqlite >=3.33.0 # [unix]
     - tk
     - zlib
   run:
     - openssl
-    - sqlite  # [unix]
+    - sqlite >=3.33.0 # [unix]
     - tk
     - zlib
 
