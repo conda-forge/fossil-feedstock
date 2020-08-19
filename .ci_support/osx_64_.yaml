@@ -3,7 +3,7 @@ MACOSX_DEPLOYMENT_TARGET:
 c_compiler:
 - clang
 c_compiler_version:
-- '9'
+- '10'
 channel_sources:
 - conda-forge,defaults
 channel_targets:
@@ -17,14 +17,12 @@ openssl:
 pin_run_as_build:
   openssl:
     max_pin: x.x.x
-  sqlite:
-    max_pin: x
   tk:
     max_pin: x.x
   zlib:
     max_pin: x.x
-sqlite:
-- '3'
+target_platform:
+- osx-64
 tk:
 - '8.6'
 zlib:

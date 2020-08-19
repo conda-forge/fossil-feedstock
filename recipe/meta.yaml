@@ -1,5 +1,5 @@
 {% set name = "fossil" %}
-{% set version = "2.11" %}
+{% set version = "2.12" %}
 
 package:
   name: {{ name }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://www.fossil-scm.org/xfer/uv/{{ name }}-src-{{ version }}.tar.gz
-  sha256: 3d5a04bbe0075edd7f04c64ffc8f3af71d16565bf606b753f5d5752e48ff3631
+  sha256: 8de5367c462d0671b0ca579d909ab1e25efaaf294f37ce9af93f04b965694166
 
 build:
   number: 0
@@ -22,12 +22,12 @@ requirements:
     - perl  # [win]
   host:
     - openssl
-    - sqlite  # [unix]
+    - sqlite >=3.33.0  # [unix]
     - tk
     - zlib
   run:
     - openssl
-    - sqlite  # [unix]
+    - sqlite >=3.33.0  # [unix]
     - tk
     - zlib
 
