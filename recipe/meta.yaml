@@ -1,5 +1,5 @@
 {% set name = "fossil" %}
-{% set version = "2.12" %}
+{% set version = "2.13" %}
 
 package:
   name: {{ name }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://www.fossil-scm.org/xfer/uv/{{ name }}-src-{{ version }}.tar.gz
-  sha256: 8de5367c462d0671b0ca579d909ab1e25efaaf294f37ce9af93f04b965694166
+  sha256: d933d3e0710eed3de5ee23bf8d2677419c4d4a8cd30b61f7161d9071d63a73f5
 
 build:
   number: 0
