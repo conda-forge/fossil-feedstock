@@ -5,12 +5,14 @@ Home: https://fossil-scm.org
 
 Package license: BSD-2-Clause
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/fossil-feedstock/blob/master/LICENSE.txt)
 
 Summary: Fossil is a simple, high-reliability, distributed software configuration management system with these advanced features:
 
 
+Development: https://fossil-scm.org/index.html/dir?ci=tip
 
+Documentation: https://fossil-scm.org/index.html/doc/trunk/www/permutedindex.html
 
 Current build status
 ====================
