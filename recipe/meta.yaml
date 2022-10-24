@@ -7,11 +7,10 @@ package:
 
 source:
   url: https://www.fossil-scm.org/xfer/uv/{{ name }}-src-{{ version }}.tar.gz
-  sha256: 671edda9a014474d0f07b4c616b37222e218275b3c8e5414657830c6f351877b
+  sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
 
 build:
   number: 1
-  skip: true  # [win and vc<14]
 
 requirements:
   build:
@@ -22,12 +21,7 @@ requirements:
     - perl  # [win]
   host:
     - openssl
-    - sqlite >=3.34.0  # [unix]
-    - tk
-    - zlib
-  run:
-    - openssl
-    - sqlite >=3.34.0  # [unix]
+    - sqlite  # [unix]
     - tk
     - zlib
 
