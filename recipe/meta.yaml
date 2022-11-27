@@ -1,22 +1,23 @@
-{% set name = "fossil" %}
-{% set version = "2.15" %}
+{% set version = "2.20" %}
 
 package:
-  name: {{ name }}
+  name: fossil
   version: {{ version }}
 
 source:
-  url: https://www.fossil-scm.org/xfer/uv/{{ name }}-src-{{ version }}.tar.gz
-  sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+  url: https://fossil-scm.org/home/tarball/version-{{ version }}/fossil-src-{{ version }}.tar.gz
+  sha256: 0892ea4faa573701ca285a3d4a2d203e8abbb022affe3b1be35658845e8de721
 
 build:
-  number: 1
+  number: 0
 
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
     - ccache  # [unix]
     - cmake  # [win]
+    - emsdk  # [unix]
     - make  # [unix]
     - perl  # [win]
   host:
@@ -36,7 +37,6 @@ about:
   license_file: COPYRIGHT-BSD2.txt
   summary: >
     Fossil is a simple, high-reliability, distributed software configuration management system with these advanced features:
-
   doc_url: https://fossil-scm.org/index.html/doc/trunk/www/permutedindex.html
   dev_url: https://fossil-scm.org/index.html/dir?ci=tip
 
