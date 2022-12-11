@@ -1,11 +1,11 @@
-About fossil
-============
+About fossil-split
+==================
 
 Home: https://fossil-scm.org
 
 Package license: BSD-2-Clause
 
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/fossil-feedstock/blob/master/LICENSE.txt)
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/fossil-feedstock/blob/main/LICENSE.txt)
 
 Summary: Fossil is a simple, high-reliability, distributed software configuration management system with these advanced features:
 
@@ -25,8 +25,8 @@ Current build status
     <td>
       <details>
         <summary>
-          <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6211&branchName=master">
-            <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/fossil-feedstock?branchName=master">
+          <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6211&branchName=main">
+            <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/fossil-feedstock?branchName=main">
           </a>
         </summary>
         <table>
@@ -34,43 +34,43 @@ Current build status
           <tbody><tr>
               <td>linux_64_openssl1.1.1</td>
               <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6211&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/fossil-feedstock?branchName=master&jobName=linux&configuration=linux%20linux_64_openssl1.1.1" alt="variant">
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6211&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/fossil-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_openssl1.1.1" alt="variant">
                 </a>
               </td>
             </tr><tr>
               <td>linux_64_openssl3</td>
               <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6211&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/fossil-feedstock?branchName=master&jobName=linux&configuration=linux%20linux_64_openssl3" alt="variant">
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6211&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/fossil-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_openssl3" alt="variant">
                 </a>
               </td>
             </tr><tr>
               <td>osx_64_openssl1.1.1</td>
               <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6211&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/fossil-feedstock?branchName=master&jobName=osx&configuration=osx%20osx_64_openssl1.1.1" alt="variant">
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6211&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/fossil-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_openssl1.1.1" alt="variant">
                 </a>
               </td>
             </tr><tr>
               <td>osx_64_openssl3</td>
               <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6211&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/fossil-feedstock?branchName=master&jobName=osx&configuration=osx%20osx_64_openssl3" alt="variant">
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6211&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/fossil-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_openssl3" alt="variant">
                 </a>
               </td>
             </tr><tr>
               <td>win_64_openssl1.1.1</td>
               <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6211&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/fossil-feedstock?branchName=master&jobName=win&configuration=win%20win_64_openssl1.1.1" alt="variant">
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6211&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/fossil-feedstock?branchName=main&jobName=win&configuration=win%20win_64_openssl1.1.1" alt="variant">
                 </a>
               </td>
             </tr><tr>
               <td>win_64_openssl3</td>
               <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6211&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/fossil-feedstock?branchName=master&jobName=win&configuration=win%20win_64_openssl3" alt="variant">
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6211&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/fossil-feedstock?branchName=main&jobName=win&configuration=win%20win_64_openssl3" alt="variant">
                 </a>
               </td>
             </tr>
@@ -87,27 +87,28 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-fossil-green.svg)](https://anaconda.org/conda-forge/fossil) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/fossil.svg)](https://anaconda.org/conda-forge/fossil) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/fossil.svg)](https://anaconda.org/conda-forge/fossil) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/fossil.svg)](https://anaconda.org/conda-forge/fossil) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-pikchr-green.svg)](https://anaconda.org/conda-forge/pikchr) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pikchr.svg)](https://anaconda.org/conda-forge/pikchr) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pikchr.svg)](https://anaconda.org/conda-forge/pikchr) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pikchr.svg)](https://anaconda.org/conda-forge/pikchr) |
 
-Installing fossil
-=================
+Installing fossil-split
+=======================
 
-Installing `fossil` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `fossil-split` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
 
 ```
 conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `fossil` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `fossil, pikchr` can be installed with `conda`:
 
 ```
-conda install fossil
+conda install fossil pikchr
 ```
 
 or with `mamba`:
 
 ```
-mamba install fossil
+mamba install fossil pikchr
 ```
 
 It is possible to list all of the versions of `fossil` available on your platform with `conda`:
@@ -177,17 +178,17 @@ Terminology
                   produce the finished article (built conda distributions)
 
 
-Updating fossil-feedstock
-=========================
+Updating fossil-split-feedstock
+===============================
 
-If you would like to improve the fossil recipe or build a new
+If you would like to improve the fossil-split recipe or build a new
 package version, please fork this repository and submit a PR. Upon submission,
 your changes will be run on the appropriate platforms to give the reviewer an
 opportunity to confirm that the changes result in a successful build. Once
 merged, the recipe will be re-built and uploaded automatically to the
 `conda-forge` channel, whereupon the built conda packages will be available for
 everybody to install and use from the `conda-forge` channel.
-Note that all branches in the conda-forge/fossil-feedstock are
+Note that all branches in the conda-forge/fossil-split-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
 on branches in forks and branches in the main repository should only be used to
 build distinct package versions.
