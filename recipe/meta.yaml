@@ -37,7 +37,7 @@ outputs:
       commands:
         - fossil --help
 
-  - name: pikchr
+  - name: fossil-pikchr
     build:
       script:
         - bash {{ RECIPE_DIR }}/build-pikchr.sh  # [unix]
@@ -46,6 +46,8 @@ outputs:
       build:
         - {{ compiler('c') }}  # [unix]
         - {{ compiler('m2w64_c') }}  # [win]
+      run_constrained:
+        - {{ pin_subpackge('fossil', max_pin='x.x.x') }}
     test:
       files:
         - test.pikchr
@@ -70,5 +72,6 @@ about:
   dev_url: https://fossil-scm.org/index.html/dir?ci=tip
 
 extra:
+  feedstock-name: fossil
   recipe-maintainers:
     - bollwyvl
