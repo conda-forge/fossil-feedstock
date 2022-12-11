@@ -47,7 +47,7 @@ outputs:
         - {{ compiler('c') }}  # [unix]
         - {{ compiler('m2w64_c') }}  # [win]
       run_constrained:
-        - {{ pin_subpackge('fossil', max_pin='x.x.x') }}
+        - {{ pin_subpackage('fossil', max_pin='x.x.x') }}
     test:
       files:
         - test.pikchr
