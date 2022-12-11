@@ -1,40 +1,69 @@
 {% set version = "2.20" %}
 
 package:
-  name: fossil
+  name: fossil-split
   version: {{ version }}
 
 source:
-  url: https://fossil-scm.org/home/tarball/version-{{ version }}/fossil-src-{{ version }}.tar.gz
-  sha256: 0892ea4faa573701ca285a3d4a2d203e8abbb022affe3b1be35658845e8de721
+  - url: https://fossil-scm.org/home/tarball/version-{{ version }}/fossil-src-{{ version }}.tar.gz
+    sha256: 0892ea4faa573701ca285a3d4a2d203e8abbb022affe3b1be35658845e8de721
+  - url: https://spdx.org/licenses/0BSD.html
+    sha256: 37ca159203c817e131b400fa5d5b358f983ba8e01ab6bd99358ef51715fcc3fb
 
 build:
-  number: 0
+  number: 1
 
-requirements:
-  build:
-    - {{ compiler('c') }}
-    - {{ compiler('cxx') }}
-    - ccache  # [unix]
-    - cmake  # [win]
-    - emsdk  # [unix]
-    - make  # [unix]
-    - perl  # [win]
-  host:
-    - openssl
-    - sqlite  # [unix]
-    - tk
-    - zlib
+outputs:
+  - name: fossil
+    build:
+      script:
+        - bash {{ RECIPE_DIR }}/build-fossil.sh  # [unix]
+        - call {{ RECIPE_DIR }}\build-fossil.bat  # [win]
+    requirements:
+      build:
+        - {{ compiler('c') }}
+        - {{ compiler('cxx') }}
+        - ccache  # [unix]
+        - cmake  # [win]
+        - emsdk  # [unix]
+        - make  # [unix]
+        - perl  # [win]
+      host:
+        - openssl
+        - sqlite  # [unix]
+        - tk
+        - zlib
+    test:
+      commands:
+        - fossil --help
 
-test:
-  commands:
-    - fossil --help
+  - name: pikchr
+    build:
+      script:
+        - bash {{ RECIPE_DIR }}/build-pikchr.sh  # [unix]
+        - call {{ RECIPE_DIR }}\build-pikchr.bat  # [win]
+    requirements:
+      build:
+        - {{ compiler('c') }}  # [unix]
+        - {{ compiler('m2w64_c') }}  # [win]
+    test:
+      files:
+        - test.pikchr
+      commands:
+        - pikchr --svg-only test.pikchr
+    about:
+      home: https://pikchr.org
+      license: 0BSD
+      license_file:
+        - 0BSD.html
+      summary: Pikchr (pronounced "picture") is a PIC-like markup language for diagrams in technical documentation.
 
 about:
   home: https://fossil-scm.org
   license: BSD-2-Clause
-  license_family: BSD
-  license_file: COPYRIGHT-BSD2.txt
+  license_file:
+    - COPYRIGHT-BSD2.txt
+    - 0BSD.html
   summary: >
     Fossil is a simple, high-reliability, distributed software configuration management system with these advanced features:
   doc_url: https://fossil-scm.org/index.html/doc/trunk/www/permutedindex.html
