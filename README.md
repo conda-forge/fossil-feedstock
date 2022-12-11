@@ -1,5 +1,5 @@
-About fossil-split
-==================
+About fossil
+============
 
 Home: https://fossil-scm.org
 
@@ -87,28 +87,28 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-fossil-green.svg)](https://anaconda.org/conda-forge/fossil) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/fossil.svg)](https://anaconda.org/conda-forge/fossil) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/fossil.svg)](https://anaconda.org/conda-forge/fossil) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/fossil.svg)](https://anaconda.org/conda-forge/fossil) |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-pikchr-green.svg)](https://anaconda.org/conda-forge/pikchr) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pikchr.svg)](https://anaconda.org/conda-forge/pikchr) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pikchr.svg)](https://anaconda.org/conda-forge/pikchr) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pikchr.svg)](https://anaconda.org/conda-forge/pikchr) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-fossil--pikchr-green.svg)](https://anaconda.org/conda-forge/fossil-pikchr) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/fossil-pikchr.svg)](https://anaconda.org/conda-forge/fossil-pikchr) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/fossil-pikchr.svg)](https://anaconda.org/conda-forge/fossil-pikchr) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/fossil-pikchr.svg)](https://anaconda.org/conda-forge/fossil-pikchr) |
 
-Installing fossil-split
-=======================
+Installing fossil
+=================
 
-Installing `fossil-split` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `fossil` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
 
 ```
 conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `fossil, pikchr` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `fossil, fossil-pikchr` can be installed with `conda`:
 
 ```
-conda install fossil pikchr
+conda install fossil fossil-pikchr
 ```
 
 or with `mamba`:
 
 ```
-mamba install fossil pikchr
+mamba install fossil fossil-pikchr
 ```
 
 It is possible to list all of the versions of `fossil` available on your platform with `conda`:
@@ -178,17 +178,17 @@ Terminology
                   produce the finished article (built conda distributions)
 
 
-Updating fossil-split-feedstock
-===============================
+Updating fossil-feedstock
+=========================
 
-If you would like to improve the fossil-split recipe or build a new
+If you would like to improve the fossil recipe or build a new
 package version, please fork this repository and submit a PR. Upon submission,
 your changes will be run on the appropriate platforms to give the reviewer an
 opportunity to confirm that the changes result in a successful build. Once
 merged, the recipe will be re-built and uploaded automatically to the
 `conda-forge` channel, whereupon the built conda packages will be available for
 everybody to install and use from the `conda-forge` channel.
-Note that all branches in the conda-forge/fossil-split-feedstock are
+Note that all branches in the conda-forge/fossil-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
 on branches in forks and branches in the main repository should only be used to
 build distinct package versions.
