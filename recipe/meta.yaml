@@ -1,4 +1,4 @@
-{% set version = "2.20" %}
+{% set version = "2.21" %}
 
 package:
   name: fossil-split
@@ -6,12 +6,12 @@ package:
 
 source:
   - url: https://fossil-scm.org/home/tarball/version-{{ version }}/fossil-src-{{ version }}.tar.gz
-    sha256: 0892ea4faa573701ca285a3d4a2d203e8abbb022affe3b1be35658845e8de721
+    sha256: 195faf0b20c101834a809979d0a9cdf04a0dcbae1fdabae792c9db900b73bda0
   - url: https://spdx.org/licenses/0BSD.html
-    sha256: 37ca159203c817e131b400fa5d5b358f983ba8e01ab6bd99358ef51715fcc3fb
+    sha256: f5c185366c65ec8ead22f9708e09e419aa5b7aec75ec321693030209b972b6df
 
 build:
-  number: 1
+  number: 0
 
 outputs:
   - name: fossil
