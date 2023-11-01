@@ -3,6 +3,7 @@ About fossil-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/fossil-feedstock/blob/main/LICENSE.txt)
 
+
 About fossil
 ------------
 
@@ -16,6 +17,7 @@ Summary: Fossil is a simple, high-reliability, distributed software configuratio
 Development: https://fossil-scm.org/index.html/dir?ci=tip
 
 Documentation: https://fossil-scm.org/index.html/doc/trunk/www/permutedindex.html
+
 About fossil-pikchr
 -------------------
 
