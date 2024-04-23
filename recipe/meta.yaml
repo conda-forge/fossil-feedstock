@@ -1,4 +1,4 @@
-{% set version = "2.23" %}
+{% set version = "2.24" %}
 
 package:
   name: fossil-split
@@ -6,9 +6,9 @@ package:
 
 source:
   - url: https://fossil-scm.org/home/tarball/version-{{ version }}/fossil-src-{{ version }}.tar.gz
-    sha256: a94aec2609331cd6890c6725b55aea43041011863f3d84fdc380415af75233e4
+    sha256: e6f5a559369bf16baf539e69e6d0cea5a6410efa9a6e7f160c7a4932080413be
   - url: https://spdx.org/licenses/0BSD.html
-    sha256: 9501da0475aea3db16fd70f25a309e83b5edde1f2e43f4d55fd0e63b546703a7
+    sha256: d038a9d97e8aedf146dfd50f7d5548e953561e83b2efdcddcaf08e4966470f98
 
 build:
   number: 0
@@ -22,6 +22,7 @@ outputs:
     requirements:
       build:
         - {{ compiler('c') }}
+        - {{ stdlib("c") }}
         - {{ compiler('cxx') }}
         - ccache  # [unix]
         - cmake  # [win]
@@ -45,7 +46,9 @@ outputs:
     requirements:
       build:
         - {{ compiler('c') }}  # [unix]
+        - {{ stdlib("c") }}    # [unix]
         - {{ compiler('m2w64_c') }}  # [win]
+        - {{ stdlib("c") }}          # [win]
       run_constrained:
         - {{ pin_subpackage('fossil', max_pin='x.x.x') }}
     test:
