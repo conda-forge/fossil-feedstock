@@ -11,7 +11,7 @@ source:
     sha256: d038a9d97e8aedf146dfd50f7d5548e953561e83b2efdcddcaf08e4966470f98
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - name: fossil
