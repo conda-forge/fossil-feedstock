@@ -9,7 +9,9 @@ channel_targets:
 cxx_compiler:
 - vs2019
 m2w64_c_compiler:
-- m2w64-toolchain
+- gcc
+m2w64_c_compiler_version:
+- '13'
 openssl:
 - '3'
 perl:
@@ -19,4 +21,4 @@ target_platform:
 tk:
 - '8.6'
 zlib:
-- '1.2'
+- '1'
