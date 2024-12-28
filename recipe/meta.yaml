@@ -21,9 +21,9 @@ outputs:
         - call {{ RECIPE_DIR }}\build-fossil.bat  # [win]
     requirements:
       build:
-        - {{ compiler('c') }}
+        - {{ compiler("c") }}
+        - {{ compiler("cxx") }}
         - {{ stdlib("c") }}
-        - {{ compiler('cxx') }}
         - ccache  # [unix]
         - emsdk   # [unix]
         - make    # [unix]
@@ -46,10 +46,10 @@ outputs:
     requirements:
       build:
         - {{ stdlib("c") }}
-        - {{ compiler('c') }}        # [unix]
-        - {{ compiler('m2w64_c') }}  # [win]
+        - {{ compiler("c") }}        # [unix]
+        - {{ compiler("m2w64_c") }}  # [win]
       run_constrained:
-        - {{ pin_subpackage('fossil', max_pin='x.x.x') }}
+        - {{ pin_subpackage("fossil", max_pin="x.x.x") }}
     test:
       files:
         - test.pikchr

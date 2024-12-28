@@ -17,6 +17,7 @@ else
 fi
 
 ./configure \
+  $CONDA_TOOLCHAIN_HOST
   --prefix=$PREFIX \
   --debug \
   --disable-internal-sqlite \
