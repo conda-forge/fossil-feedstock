@@ -11,29 +11,29 @@ source:
     sha256: 9b936047a6c9f665efbf87fbe534df26e4341eab2904bc7be66ad9c03ebf20d8
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - name: fossil
     build:
       script:
-        - bash {{ RECIPE_DIR }}/build-fossil.sh  # [unix]
+        - bash {{ RECIPE_DIR }}/build-fossil.sh   # [unix]
         - call {{ RECIPE_DIR }}\build-fossil.bat  # [win]
     requirements:
       build:
-        - {{ compiler('c') }}
+        - {{ compiler("c") }}
+        - {{ compiler("cxx") }}
         - {{ stdlib("c") }}
-        - {{ compiler('cxx') }}
         - ccache  # [unix]
-        - cmake  # [win]
-        - emsdk  # [unix]
-        - make  # [unix]
-        - perl  # [win]
+        - emsdk   # [unix]
+        - make    # [unix]
+        - cmake   # [win]
+        - perl    # [win]
       host:
         - openssl
-        - sqlite  # [unix]
         - tk
         - zlib
+        - sqlite  # [unix]
     test:
       commands:
         - fossil --help
@@ -41,16 +41,15 @@ outputs:
   - name: fossil-pikchr
     build:
       script:
-        - bash {{ RECIPE_DIR }}/build-pikchr.sh  # [unix]
+        - bash {{ RECIPE_DIR }}/build-pikchr.sh   # [unix]
         - call {{ RECIPE_DIR }}\build-pikchr.bat  # [win]
     requirements:
       build:
-        - {{ compiler('c') }}  # [unix]
-        - {{ stdlib("c") }}    # [unix]
-        - {{ compiler('m2w64_c') }}  # [win]
-        - {{ stdlib("c") }}          # [win]
+        - {{ stdlib("c") }}
+        - {{ compiler("c") }}        # [unix]
+        - {{ compiler("m2w64_c") }}  # [win]
       run_constrained:
-        - {{ pin_subpackage('fossil', max_pin='x.x.x') }}
+        - {{ pin_subpackage("fossil", max_pin="x.x.x") }}
     test:
       files:
         - test.pikchr
