@@ -16,15 +16,16 @@ else
   . ${CONDA_EMSDK_DIR}/emsdk_env.sh
 fi
 
-./configure \
-  $CONDA_TOOLCHAIN_HOST
-  --prefix=$PREFIX \
-  --debug \
+./configure --prefix=${PREFIX} \
+  --build=${BUILD} \
+  --host=${HOST} \
   --disable-internal-sqlite \
-  --with-tcl=$PREFIX \
-  --with-zlib=$PREFIX/include \
-  --with-openssl=$PREFIX \
-  --json
+  --with-tcl=${PREFIX} \
+  --with-zlib=${PREFIX}/include \
+  --with-openssl=${PREFIX} \
+  --json \
+  CFLAGS="${CFLAGS} -I${PREFIX}/include" \
+  LDFLAGS="${LDFLAGS} -L${PREFIX}/lib" \
 
 # runs without error if already exists
 make -j${CPU_COUNT} wasm
