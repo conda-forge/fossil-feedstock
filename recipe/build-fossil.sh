@@ -1,13 +1,6 @@
 #!/usr/bin/env bash
 set -eux
 
-if [[ "${target_platform}" == "linux-ppc64le" ]]; then
-  export BUILD_OR_PPC64LE="ppc64le-linux"
-else
-  export BUILD_OR_PPC64LE="${BUILD}"
-fi
-
-
 # shellcheck disable=SC2155
 export CC="$(basename "${CC}")"
 
@@ -26,7 +19,7 @@ else
 fi
 
 ./configure --prefix="${PREFIX}" \
-  --build="${BUILD_OR_PPC64LE}" \
+  --build="${BUILD}" \
   --host="${HOST}" \
   --with-tcl="${PREFIX}" \
   --with-zlib="${PREFIX}/include" \
