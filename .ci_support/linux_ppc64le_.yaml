@@ -23,9 +23,7 @@ openssl:
 sqlite:
 - '3'
 target_platform:
-- linux-64
-tk:
-- '8.6'
+- linux-ppc64le
 zip_keys:
 - - c_compiler_version
   - cxx_compiler_version
