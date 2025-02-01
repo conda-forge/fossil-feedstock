@@ -8,6 +8,7 @@ set LIBPATH=%LIBRARY_LIB%;%LIBPATH%
 cd win
 
 nmake /f Makefile.msc ^
+  BCC=%CC% ^
   FOSSIL_DYNAMIC_BUILD=1 ^
   FOSSIL_ENABLE_SSL=1 ^
   FOSSIL_ENABLE_JSON=1 ^
