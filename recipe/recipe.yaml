@@ -4,6 +4,8 @@ schema_version: 1
 context:
   version: "2.26"
   python_min: "3.9"
+  # test against some _other_ python
+  python_check_max: "3.13"
 
 recipe:
   name: fossil-split
@@ -48,9 +50,11 @@ outputs:
       ignore_run_exports:
         from_package:
           - python
-          - python
     tests:
-      - script: fossil --help
+      - requirements:
+          run:
+            - python ${{ python_check_max }}.*
+        script: fossil --help
 
   - package:
       name: fossil-pikchr
@@ -69,6 +73,9 @@ outputs:
       - files:
           recipe:
             - test.pikchr
+        requirements:
+          run:
+            - python ${{ python_check_max }}.*
         script:
           - pikchr --svg-only test.pikchr
     about:
