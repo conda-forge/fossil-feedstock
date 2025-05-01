@@ -2,7 +2,8 @@
 schema_version: 1
 
 context:
-  version: 2.26
+  version: "2.26"
+  python_min: "3.9"
 
 recipe:
   name: fossil-split
@@ -14,6 +15,8 @@ source:
 
 build:
   number: 0
+  # only build for the minimal python version
+  skip: not (match(python, python_min ~ '.*'))
 
 outputs:
   - package:
@@ -31,7 +34,6 @@ outputs:
             - ccache
             - emsdk
             - make
-            - python
           else:
             - cmake
             - perl
@@ -41,9 +43,11 @@ outputs:
         - zlib
         - if: unix
           then:
+            - python
             - sqlite
       ignore_run_exports:
         from_package:
+          - python
           - python
     tests:
       - script: fossil --help
