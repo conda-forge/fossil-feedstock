@@ -7,12 +7,11 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/fossil-feedstoc
 About fossil
 ------------
 
-Home: https://fossil-scm.org
+Home: https://fossil-scm.org/
 
 Package license: BSD-2-Clause
 
 Summary: Fossil is a simple, high-reliability, distributed software configuration management system with these advanced features:
-
 
 Development: https://fossil-scm.org/index.html/dir?ci=tip
 
@@ -21,11 +20,15 @@ Documentation: https://fossil-scm.org/index.html/doc/trunk/www/permutedindex.htm
 About fossil-pikchr
 -------------------
 
-Home: https://pikchr.org
+Home: https://pikchr.org/
 
 Package license: 0BSD
 
 Summary: Pikchr (pronounced "picture") is a PIC-like markup language for diagrams in technical documentation.
+
+Development: https://fossil-scm.org/index.html/dir?ci=tip
+
+Documentation: https://fossil-scm.org/index.html/doc/trunk/www/permutedindex.html
 
 Current build status
 ====================
