@@ -14,6 +14,7 @@ source:
 
 build:
   number: 0
+  skip: not (match(python, python_min ~ '.*'))
 
 outputs:
   - package:
@@ -31,6 +32,7 @@ outputs:
             - ccache
             - emsdk
             - make
+            - python
           else:
             - cmake
             - perl
@@ -41,6 +43,9 @@ outputs:
         - if: unix
           then:
             - sqlite
+      ignore_run_exports:
+        from_package:
+          - python
     tests:
       - script: fossil --help
 
