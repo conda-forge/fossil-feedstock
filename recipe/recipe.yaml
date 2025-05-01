@@ -12,8 +12,11 @@ recipe:
   version: ${{ version }}
 
 source:
-  - url: https://fossil-scm.org/home/tarball/version-${{ version }}/fossil-src-${{ version }}.tar.gz
-    sha256: a9be104c8055ada40985a158392d73f3c84829accb5b5d404e361fea360774c2
+  - url: https://github.com/drhsqlite/fossil-mirror/archive/refs/tags/version-${{ version }}.tar.gz
+    sha256: c4cf187324d8052896cc143d22e7c870b5c97719e89c3d94fc431912b8b40bb4
+  # fails to download, only on osx-*?
+  # - url: https://fossil-scm.org/home/tarball/version-${{ version }}/fossil-src-${{ version }}.tar.gz
+  #   sha256: a9be104c8055ada40985a158392d73f3c84829accb5b5d404e361fea360774c2
 
 build:
   number: 0
