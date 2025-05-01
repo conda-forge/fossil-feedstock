@@ -37,7 +37,6 @@ outputs:
         - if: unix
           then:
             - ccache
-            - emsdk
             - make
           else:
             - cmake
@@ -48,7 +47,7 @@ outputs:
         - zlib
         - if: unix
           then:
-            - python
+            - emsdk
             - sqlite
       ignore_run_exports:
         from_package:
