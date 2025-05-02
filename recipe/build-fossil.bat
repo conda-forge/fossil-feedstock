@@ -1,9 +1,9 @@
 @echo ON
 
 :: Finds stdint.h from msinttypes.
-set INCLUDE=%LIBRARY_INC%;%INCLUDE%
-set LIB=%LIBRARY_LIB%;%LIB%
-set LIBPATH=%LIBRARY_LIB%;%LIBPATH%
+set "INCLUDE=%LIBRARY_INC%;%INCLUDE%"
+set "LIB=%LIBRARY_LIB%;%LIB%"
+set "LIBPATH=%LIBRARY_LIB%;%LIBPATH%"
 
 cd win
 
@@ -14,11 +14,11 @@ nmake /f Makefile.msc ^
   FOSSIL_ENABLE_JSON=1 ^
   FOSSIL_ENABLE_TCL=1 ^
   FOSSIL_BUILD_ZLIB=0 ^
-  PERLDIR=%PREFIX%\Library\bin
-if errorlevel 1 exit 1
+  PERLDIR=%PREFIX%\Library\bin ^
+  || exit 2
 
-md %SCRIPTS% | echo "%SCRIPTS% already exists"
+md "%SCRIPTS%" | echo "%SCRIPTS% already exists"
 dir
 
-copy fossil.exe %SCRIPTS%\fossil.exe
-if errorlevel 1 exit 1
+copy fossil.exe "%SCRIPTS%\fossil.exe" ^
+  || exit 3
