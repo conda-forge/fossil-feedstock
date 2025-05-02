@@ -5,30 +5,30 @@ set -eux
 export CC="$(basename "${CC}")"
 
 ln -s "${BUILD_PREFIX}/bin/${CC}" "${BUILD_PREFIX}/bin/cc"
+ln -s "${BUILD_PREFIX}/bin/python" "${PREFIX}/bin/python"
 
-export PIKCHR_WASM=extsrc/pikchr.wasm
+emsdk install latest
+emsdk activate latest
 
-if [[ -f "${PIKCHR_WASM}" ]]; then
-  echo "${PIKCHR_WASM} exists, not doing any emsdk setup"
-else
-  # TODO: maybe pass in via script_env?
-  emsdk install latest
-  emsdk activate latest
-  # shellcheck disable=SC1091
-  . "${CONDA_EMSDK_DIR}/emsdk_env.sh"
-fi
+# shellcheck disable=SC1091
+. "${CONDA_EMSDK_DIR}/emsdk_env.sh"
 
-./configure --prefix="${PREFIX}" \
+./configure \
+  --prefix="${PREFIX}" \
   --build="${BUILD}" \
   --host="${HOST}" \
+  --internal-sqlite=0 \
+  --json=1 \
+  --with-openssl="${PREFIX}" \
+  --with-sqlite="${PREFIX}" \
   --with-tcl="${PREFIX}" \
   --with-zlib="${PREFIX}/include" \
-  --with-openssl="${PREFIX}" \
-  --disable-internal-sqlite \
-  --json
+  || exit 1
 
-# runs without error if already exists
-make "-j${CPU_COUNT}" wasm
-make "-j${CPU_COUNT}"
+make wasm
+
+make
 
 make install --debug
+
+rm "${PREFIX}/bin/python"
