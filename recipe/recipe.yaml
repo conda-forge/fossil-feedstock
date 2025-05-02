@@ -39,6 +39,7 @@ outputs:
             - ccache
             - emsdk
             - make
+            - python
           else:
             - cmake
             - perl
@@ -52,9 +53,11 @@ outputs:
       ignore_run_exports:
         from_package:
           - python
+          - python_abi
     tests:
       - requirements:
           run:
+            # verify against some other python than the one we built with
             - python ${{ python_check_max }}.*
         script: fossil --help
 

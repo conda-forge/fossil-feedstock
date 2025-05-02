@@ -5,9 +5,11 @@ set -eux
 export CC="$(basename "${CC}")"
 
 ln -s "${BUILD_PREFIX}/bin/${CC}" "${BUILD_PREFIX}/bin/cc"
+ln -s "${BUILD_PREFIX}/bin/python" "${PREFIX}/bin/python"
 
 emsdk install latest
 emsdk activate latest
+
 # shellcheck disable=SC1091
 . "${CONDA_EMSDK_DIR}/emsdk_env.sh"
 
@@ -21,7 +23,6 @@ emsdk activate latest
   --disable-internal-sqlite \
   --json
 
-# runs without error if already exists
 make "-j${CPU_COUNT}" wasm
 make "-j${CPU_COUNT}"
 
