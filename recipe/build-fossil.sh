@@ -17,13 +17,18 @@ emsdk activate latest
   --prefix="${PREFIX}" \
   --build="${BUILD}" \
   --host="${HOST}" \
+  --internal-sqlite=0 \
+  --json=1 \
+  --with-openssl="${PREFIX}" \
+  --with-sqlite="${PREFIX}" \
   --with-tcl="${PREFIX}" \
   --with-zlib="${PREFIX}/include" \
-  --with-openssl="${PREFIX}" \
-  --disable-internal-sqlite \
-  --json
+  || exit 1
 
-make "-j${CPU_COUNT}" wasm
-make "-j${CPU_COUNT}"
+make wasm
+
+make
 
 make install --debug
+
+rm "${PREFIX}/bin/python"
