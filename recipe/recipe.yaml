@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "2.26"
+  version: "2.27"
   python_min: "3.9"
   # test against some _other_ python
   python_check_max: "3.13"
@@ -16,10 +16,10 @@ source:
     then:
       # remove after https://github.com/prefix-dev/rattler-build/issues/1608
       - url: https://github.com/drhsqlite/fossil-mirror/archive/refs/tags/version-${{ version }}.tar.gz
-        sha256: c4cf187324d8052896cc143d22e7c870b5c97719e89c3d94fc431912b8b40bb4
+        sha256: b31a23d7f8795c396e240865828de393d041af0a5b8aa9c8a802fab55e40f24f
     else:
       - url: https://fossil-scm.org/home/tarball/version-${{ version }}/fossil-src-${{ version }}.tar.gz
-        sha256: a9be104c8055ada40985a158392d73f3c84829accb5b5d404e361fea360774c2
+        sha256: 0405a96ba4d286b46fb5c3217d6c13391a2c637da90c51a927ee0c31c58f9064
 
 build:
   number: 0
