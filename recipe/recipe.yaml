@@ -52,10 +52,8 @@ outputs:
         file: build-pikchr
     requirements:
       build:
+        - ${{ compiler("c") }}
         - ${{ stdlib("c") }}
-        - if: unix
-          then: ${{ compiler("c") }}
-          else: ${{ compiler("m2w64_c") }}
       run_constraints:
         - ${{ pin_subpackage("fossil", upper_bound="x.x.x") }}
     tests:
