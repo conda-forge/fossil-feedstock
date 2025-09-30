@@ -1,0 +1,32 @@
+c_compiler:
+- vs2022
+c_stdlib:
+- vs
+channel_sources:
+- conda-forge
+channel_targets:
+- conda-forge main
+cxx_compiler:
+- vs2022
+m2w64_c_compiler:
+- gcc
+m2w64_c_compiler_version:
+- '14'
+openssl:
+- '3'
+perl:
+- 5.32.1
+pin_run_as_build:
+  python:
+    min_pin: x.x
+    max_pin: x.x
+python:
+- 3.10.* *_cpython
+python_min:
+- '3.10'
+target_platform:
+- win-64
+tk:
+- '8.6'
+zlib:
+- '1'
