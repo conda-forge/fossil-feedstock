@@ -3,7 +3,7 @@ schema_version: 1
 
 context:
   version: "2.27"
-  python_min: "3.9"
+  python_min: "3.10"
   # test against some _other_ python
   python_check_max: "3.13"
 
@@ -42,7 +42,7 @@ outputs:
             - ccache
             - emsdk
             - make
-            - python
+            - python >=${{ python_min }}
           else:
             - cmake
             - perl
