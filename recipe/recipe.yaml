@@ -31,7 +31,7 @@ outputs:
             - ccache
             - emsdk
             - make
-            - python >=3.9
+            - python >=3.10
           else:
             - cmake
             - perl
