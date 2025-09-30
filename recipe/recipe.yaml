@@ -2,29 +2,18 @@
 schema_version: 1
 
 context:
-  version: "2.26"
-  python_min: "3.9"
-  # test against some _other_ python
-  python_check_max: "3.13"
+  version: "2.27"
 
 recipe:
   name: fossil-split
   version: ${{ version }}
 
 source:
-  - if: osx
-    then:
-      # remove after https://github.com/prefix-dev/rattler-build/issues/1608
-      - url: https://github.com/drhsqlite/fossil-mirror/archive/refs/tags/version-${{ version }}.tar.gz
-        sha256: c4cf187324d8052896cc143d22e7c870b5c97719e89c3d94fc431912b8b40bb4
-    else:
-      - url: https://fossil-scm.org/home/tarball/version-${{ version }}/fossil-src-${{ version }}.tar.gz
-        sha256: a9be104c8055ada40985a158392d73f3c84829accb5b5d404e361fea360774c2
+  url: https://fossil-scm.org/home/tarball/version-${{ version }}/fossil-src-${{ version }}.tar.gz
+  sha256: 0405a96ba4d286b46fb5c3217d6c13391a2c637da90c51a927ee0c31c58f9064
 
 build:
   number: 0
-  # only build for the minimal python version
-  skip: not (match(python, python_min ~ '.*'))
 
 outputs:
   - package:
@@ -42,7 +31,7 @@ outputs:
             - ccache
             - emsdk
             - make
-            - python
+            - python >=3.10
           else:
             - cmake
             - perl
@@ -53,17 +42,8 @@ outputs:
         - if: unix
           then:
             - sqlite
-      ignore_run_exports:
-        from_package:
-          - python
-          - python_abi
     tests:
       - script: fossil --help
-      - requirements:
-          run:
-            # verify against some other python than the one we built with
-            - python ${{ python_check_max }}.*
-        script: fossil --help
 
   - package:
       name: fossil-pikchr
@@ -72,19 +52,14 @@ outputs:
         file: build-pikchr
     requirements:
       build:
+        - ${{ compiler("c") }}
         - ${{ stdlib("c") }}
-        - if: unix
-          then: ${{ compiler("c") }}
-          else: ${{ compiler("m2w64_c") }}
       run_constraints:
         - ${{ pin_subpackage("fossil", upper_bound="x.x.x") }}
     tests:
       - files:
           recipe:
             - test.pikchr
-        requirements:
-          run:
-            - python ${{ python_check_max }}.*
         script:
           - pikchr --svg-only test.pikchr
     about:
