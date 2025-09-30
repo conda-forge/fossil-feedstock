@@ -62,9 +62,6 @@ outputs:
       - files:
           recipe:
             - test.pikchr
-        requirements:
-          run:
-            - python ${{ python_check_max }}.*
         script:
           - pikchr --svg-only test.pikchr
     about:
