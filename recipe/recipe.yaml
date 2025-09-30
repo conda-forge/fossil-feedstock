@@ -3,28 +3,17 @@ schema_version: 1
 
 context:
   version: "2.27"
-  python_min: "3.10"
-  # test against some _other_ python
-  python_check_max: "3.13"
 
 recipe:
   name: fossil-split
   version: ${{ version }}
 
 source:
-  - if: osx
-    then:
-      # remove after https://github.com/prefix-dev/rattler-build/issues/1608
-      - url: https://github.com/drhsqlite/fossil-mirror/archive/refs/tags/version-${{ version }}.tar.gz
-        sha256: b31a23d7f8795c396e240865828de393d041af0a5b8aa9c8a802fab55e40f24f
-    else:
-      - url: https://fossil-scm.org/home/tarball/version-${{ version }}/fossil-src-${{ version }}.tar.gz
-        sha256: 0405a96ba4d286b46fb5c3217d6c13391a2c637da90c51a927ee0c31c58f9064
+  url: https://fossil-scm.org/home/tarball/version-${{ version }}/fossil-src-${{ version }}.tar.gz
+  sha256: 0405a96ba4d286b46fb5c3217d6c13391a2c637da90c51a927ee0c31c58f9064
 
 build:
   number: 0
-  # only build for the minimal python version
-  skip: not (match(python, python_min ~ '.*'))
 
 outputs:
   - package:
@@ -42,7 +31,7 @@ outputs:
             - ccache
             - emsdk
             - make
-            - python >=${{ python_min }}
+            - python >=3.9
           else:
             - cmake
             - perl
@@ -53,17 +42,8 @@ outputs:
         - if: unix
           then:
             - sqlite
-      ignore_run_exports:
-        from_package:
-          - python
-          - python_abi
     tests:
       - script: fossil --help
-      - requirements:
-          run:
-            # verify against some other python than the one we built with
-            - python ${{ python_check_max }}.*
-        script: fossil --help
 
   - package:
       name: fossil-pikchr
