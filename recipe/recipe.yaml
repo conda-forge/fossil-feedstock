@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "2.27"
+  version: "2.28"
 
 recipe:
   name: fossil-split
@@ -10,7 +10,7 @@ recipe:
 
 source:
   url: https://fossil-scm.org/home/tarball/version-${{ version }}/fossil-src-${{ version }}.tar.gz
-  sha256: 0405a96ba4d286b46fb5c3217d6c13391a2c637da90c51a927ee0c31c58f9064
+  sha256: 84c18824ca227e7602d2408b663c3747f754ad306ed5c73ddab959d6589538a6
 
 build:
   number: 0
